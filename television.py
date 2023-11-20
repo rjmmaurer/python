@@ -57,6 +57,6 @@ class Television:
     def __str__(self) -> str:
         """Return a string representation of the Television object."""
         if self.__muted:
-            return f"Power [{self.__status}], Channel [{self.__channel}], Volume [Muted]"
+            return f"Power [{self.__status}], Channel [{self.__channel}], Volume [0]"
         else:
             return f"Power [{self.__status}], Channel [{self.__channel}], Volume [{self.__volume}]"
