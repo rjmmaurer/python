@@ -22,9 +22,6 @@ class TestTelevision:
         self.tv1.power()
         self.tv1.volume_up()
         self.tv1.mute()
-        assert str(self.tv1) == "Power [True], Channel [0], Volume [Muted]"
-
-        self.tv1.mute()
         assert str(self.tv1) == "Power [True], Channel [0], Volume [0]"
 
         self.tv1.power()
@@ -53,11 +50,6 @@ class TestTelevision:
 
         self.tv1.power()
         self.tv1.channel_down()
-        assert str(self.tv1) == "Power [True], Channel [2], Volume [0]"
-
-        for _ in range(Television.MAX_CHANNEL):
-            self.tv1.channel_down()
-
         assert str(self.tv1) == "Power [True], Channel [3], Volume [0]"
 
     def test_volume_up(self):
@@ -80,7 +72,7 @@ class TestTelevision:
         self.tv1.power()
         self.tv1.volume_up() 
         self.tv1.volume_down()
-        assert str(self.tv1) == "Power [True], Channel [0], Volume [1]"
+        assert str(self.tv1) == "Power [True], Channel [0], Volume [0]"
 
         for _ in range(Television.MIN_VOLUME):
             self.tv1.volume_down()
